@@ -28,7 +28,7 @@ $ conda install python=3.6
 
 2. Create a virtual environment in anaconda with python3.6. Execute the following command in the terminal
 
-$ conda create -n py36 python=3.6 anaconda
+$ conda create -n mothe python=3.6 anaconda
 
 3. Activate the virtual environment. If the name of the virtual environment is 'mothe', Execute the following command in the terminal. Replace mothe with the name of your environment if it is not mothe
 
