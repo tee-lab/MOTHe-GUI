@@ -24,7 +24,9 @@
 
 1. Open the terminal/anaconda shell in windows. Install python3.6 if it does not exist in the anaconda environment. 
  You can check the python version by running- 
+ 
    `$ python --version`
+   
  We need python 3.6 to run the MOTHe app, so if your current version is any other version (eg. >3.6 or < 3.6), execute the following command to install python 3.6
 
 `$ conda install python=3.6`
