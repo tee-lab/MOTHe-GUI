@@ -4,7 +4,7 @@
 
 1. Execute the following command in the terminal
 
-`$ apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6`
+`$ apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6 libcanberra-gtk-module libcanberra-gtk3-module`
 
 2. Download the Anaconda distribution from the following website
 
