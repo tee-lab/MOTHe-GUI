@@ -20,9 +20,9 @@
 
 `$ source .bashrc`
 
-### Setting up environment in Linux
+# Setting up the environment (Linux/Windows/Mac)
 
-1. Install python3.6 if it does not exist in the anaconda environment. OPen the terminal and execute the following command
+1. Install python3.6 if it does not exist in the anaconda environment. Open the terminal/anaconda shell in windows and execute the following command
 
 `$ conda install python=3.6`
 
