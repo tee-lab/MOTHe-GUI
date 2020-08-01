@@ -54,11 +54,13 @@
 2. Enter the anaconda environment
 
 Windows: start Anaconda sheel from the start menu
+
 Linux: `$ conda activate mothe`
 
 3. Change directory to MOTHe folder
 
 Windows:
+
 Linux: cd MOTHE-GUI
 
 4. Run the MOTHe GUI app
