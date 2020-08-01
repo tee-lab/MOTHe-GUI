@@ -58,7 +58,7 @@ $ pip install -r requirement.txt
 
 $ python mothe_gui.py
 
-## Running MOTHe app
+# Running MOTHe app
 
 1. Download/clone this repository to your computer
 
