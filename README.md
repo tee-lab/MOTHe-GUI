@@ -22,7 +22,11 @@
 
 # Setting up the environment (Linux/Windows/Mac)
 
-1. Install python3.6 if it does not exist in the anaconda environment. Open the terminal/anaconda shell in windows and execute the following command
+1. Open the terminal/anaconda shell in windows. Install python3.6 if it does not exist in the anaconda environment. 
+ You can check the python version by running- 
+   `$ python --version`
+
+ Execute the following command to install python 3.6
 
 `$ conda install python=3.6`
 
