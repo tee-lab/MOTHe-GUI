@@ -60,7 +60,7 @@ $ python mothe_gui.py
 
 # Running MOTHe app
 
-1. Download/clone this repository to your computer
+1. Download/clone this repository to your computer. If you will be running MOTHe on our sample videos, download and copy untracked videos from [here](https://figshare.com/s/82661a4fd39008fae445) to the MOTHe folder which you just downloaded.
 
 2. Enter the anaconda environment
 
