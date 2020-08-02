@@ -41,7 +41,7 @@ Linux: `$ cd MOTHE-GUI`
 
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/1_gui_start.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/1_gui_start.png">
 <br>
 
 5. Follow below steps to run different functions of the app
@@ -58,31 +58,31 @@ You will also specify a step size (no. of frames to skip for detection and track
 
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/2_press_run_configure.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/2_press_run_configure.png">
 <br>
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/3_press_ok_selecting_path.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/3_press_ok_selecting_path.png">
 <br>
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/4_select_video_set_config.png.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/4_select_video_set_config.png.png">
 <br>
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/5_video_select_confirmation.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/5_video_select_confirmation.png">
 <br>
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/5_video_select_confirmation.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/5_video_select_confirmation.png">
 <br>
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/6_fill_in_details.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/6_fill_in_details.png">
 <br>
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/8_post_config_confirmation.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/8_post_config_confirmation.png">
 <br>
 
 A window appears during the configuration process which is a frame of the test video you have chosen. This step is to determine the size of the animal to be detected and tracked. This value also helps in the dataset generation phase. Make sure to choose the most accomodating animal on the screen to avoid occlusions and missed detections later.
@@ -107,16 +107,16 @@ User needs to generate at least 8k-10k samples for each category (see section **
 Mothe supports only binary classification. Therefore name the classes 'yes' for positive examples and 'no' for background examples. The data generation method takes a **step size** argument as well which helps the user to keep the number of examples per video in check. (Ex: a higher step size limits the number of frames per video. if a video is very long, one can set a higher step size to skip through unwated and consecutive frames). Please note that this step size is different from the one you entered in configure step, this step size allows you to generated data from widely spaced frames of the videos.
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/9_generate_dataset.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/9_generate_dataset.png">
 <br>
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/10_select_video.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/10_select_video.png">
 <br>
 
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/12_fill_details.png.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/12_fill_details.png.png">
 <br>
 
 A window appears which is a frame of the video you have chosen. Start generating data at this point.
@@ -136,7 +136,7 @@ Click at the center of the animal once. The algorithm calculates the size of the
 **screenshot showing selection process**
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/13_post_generation_update.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/13_post_generation_update.png">
 <br>
 
 
@@ -154,7 +154,7 @@ If you wish to test (learn how to run) this module, download our video clips fro
  To train the neural network, select the "train" option from the drop down menu-
  
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/14_run_train.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/14_run_train.png">
 <br>
 
 After successfully training the model, two graphs appear on the screen. The loss graph starts at a higher point and if the correct learning rate is applied, it takes a drastic decline and starts to plateau out as it reaches near zero. If a very high learning rate is applied, the graph starts travelling upwards instead of downwards. If a slightly higher learning rate is applied, it will not reack a closer point towards the zero line. The accuracy curve should travel upwards sharply and plateau out. It is important to avoid over fitting of data. This can be done by using adequate variance in the examples we generate during data generation. It is also important not to have too much variance since the accuracy may go down even though the network can generalize fairly well. For this stage, please use the link provided below to use the already generated data to train the network. 
@@ -178,19 +178,19 @@ Initiate the detection process by selecting 'detection' option and pressing the 
 
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/15_run_detection.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/15_run_detection.png">
 <br>
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/16_select_video.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/16_select_video.png">
 <br>
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/18_model_selection.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/18_model_selection.png">
 <br>
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/20_post_detection_update.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/20_post_detection_update.png">
 <br>
 
 After the successful detection, a video with detections and *.csv* are generated in the mothe folder.
@@ -204,23 +204,23 @@ It will use the detections from previous step. Hence, the input for this step wo
 Initiate the tracking process by selecting "track" option.
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/21_run_tracking.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/21_run_tracking.png">
 <br>
 
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/22_select_video.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/22_select_video.png">
 <br>
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/23_select_video_confirm.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/23_select_video_confirm.png">
 <br>
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/24_select_model.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/24_select_model.png">
 <br>
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/25_model_selection_update.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/25_model_selection_update.png">
 <br>
 <br>
-<img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/26_tracking_complete_update.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/tree/master/gui_screenshots/26_tracking_complete_update.png">
 <br>
 
 
