@@ -2,55 +2,15 @@
 
 ## INSTALLING ANACONDA FOR LINUX (DEBIAN DISTIBUTIONS)
 
-1. Execute the following command in the terminal
+Visit the wiki page to learn about installing Anaconda for your respective OS. Follow the link below.
 
-`$ apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6 libcanberra-gtk-module libcanberra-gtk3-module`
-
-2. Download the Anaconda distribution from the following website
-
-*__https://www.anaconda.com/products/individual#linux__*
-
-3. Execute the following command in the terminal to install the python3 anaconda distribution
-
-`$ bash ~/Downloads/Anaconda3-2020.02-Linux-x86_64.sh`
-
-4. Press positive responses for all options(Ex: yes/OK)
-
-5. exit the terminal. Open a new terminal and execute the following command
-
-`$ source .bashrc`
+*__https://github.com/tee-lab/MOTHe-GUI/wiki__*
 
 # Setting up the environment (Linux/Windows/Mac)
 
-1. Open the terminal/anaconda shell in windows. Install python3.6 if it does not exist in the anaconda environment. 
- You can check the python version by running- 
- 
-   `$ python --version`
-   
- We need python 3.6 to run the MOTHe app, so if your current version is any other version (eg. >3.6 or < 3.6), execute the following command to install python 3.6
+Visit the wiki page to learn about setting up the environment to run mothe. Follow the link below.
 
-`$ conda install python=3.6`
-
-2. Create a virtual environment in anaconda with python3.6. Execute the following command in the terminal
-
-`$ conda create -n mothe python=3.6 anaconda`
-
-3. Activate the virtual environment. If the name of the virtual environment is 'mothe', Execute the following command in the terminal. Replace mothe with the name of your environment if it is not mothe
-
-`$ conda activate mothe`
-
-4. Install the tkinter graphical module by executing the following command
-
-`$  conda install -c anaconda tk `
-
-5. Install the pip package manager from the conda repository by executing the following command
-
-`$  conda install -c anaconda pip `
-
-6. Use the requirement.txt file to install all teh modules required by mothe
-
-`$ pip install -r requirement.txt`
-
+*__https://github.com/tee-lab/MOTHe-GUI/wiki__*
 
 # Running MOTHe app
 
