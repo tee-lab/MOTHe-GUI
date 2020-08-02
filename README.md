@@ -1,26 +1,26 @@
-# INSTALLATIONS AND PREREQUISITES
+# MOTHe-GUI
 
-## INSTALLING ANACONDA FOR LINUX (DEBIAN DISTIBUTIONS)
+Mothe is a pipeline developed to detect and track multiple animals in a heterogeneous environment. MOTHe is a python based repository and it uses Convolutional Neural Network (CNN) architecture for the object detection task. It takes a digital image as an input and reads its features to assign a category. These algorithms are learning algorithms which means that they extract features from the images by using huge amounts of labeled training data. Once the CNN models are trained, these models can be used to classify novel data (images). MOTHe is designed to be generic which empowers the user to track objects of interest even in a natural setting.
 
-Visit the wiki page to learn about installing Anaconda for your respective OS. Follow the link below.
+**This repository provides a GUI application to run MOTHe on Linux/Windows/Mac OS.** User needs to install anaconda and then GUI can be run from anaconda environment.
+Follow the pre-requisites and installation steps before processding to MOTHe-GUI demonstration.
 
-*__https://github.com/tee-lab/MOTHe-GUI/wiki__*
 
-# Setting up the environment (Linux/Windows/Mac)
+## INSTALLATIONS AND PREREQUISITES
 
-Visit the wiki page to learn about setting up the environment to run mothe. Follow the link below.
+Visit this wiki page to learn about installing Anaconda for your respective OS. Follow the link below.
 
 *__https://github.com/tee-lab/MOTHe-GUI/wiki__*
 
 # Running MOTHe app
 
-1. Download/clone this repository to your computer. If you will be running MOTHe on our sample videos, download and copy untracked videos from [here](https://figshare.com/s/82661a4fd39008fae445) to the MOTHe folder which you just downloaded.
+1. Download/clone this repository to your computer, if not done already. If you will be running MOTHe on our sample videos, download and copy untracked videos from [here](https://figshare.com/s/82661a4fd39008fae445) to the MOTHe folder which you just downloaded. For testing purpose, you can download any one video from the untracked videos folder.
 
 2. Enter the anaconda environment
 
-Windows: start Anaconda sheel from the start menu
+Windows: start Anaconda shell from the start menu
 
-Linux: `$ conda activate mothe`
+Linux: Open the terminal and type- `$ conda activate mothe`
 
 3. Change directory to MOTHe folder
 
