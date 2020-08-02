@@ -16,7 +16,7 @@ Finish these installations and pre-requisites before proceedinf further.
 
 # Running MOTHe app
 
-1. Download/clone this repository to your computer, if not done already. If you will be running MOTHe on our sample videos, download and copy untracked videos from [here](https://figshare.com/s/82661a4fd39008fae445) to the MOTHe folder which you just downloaded. For testing purpose, you can download any one video from the untracked videos folder.
+1. Download/clone this repository to your computer, if not done already. If you will be running MOTHe on our sample videos, download and copy untracked videos from [here](https://figshare.com/s/82661a4fd39008fae445){:target="_blank"} to the MOTHe folder which you just downloaded. For testing purpose, you can download any one video from the untracked videos folder.
 
 
 2. Enter the anaconda environment
