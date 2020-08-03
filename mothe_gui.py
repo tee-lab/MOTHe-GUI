@@ -7,6 +7,9 @@ from tkinter.ttk import Progressbar
 from tkinter import filedialog
 import yaml
 from tkinter import ttk
+import numpy as np
+from matplotlib import pyplot as plt
+import cv2
 
 class mothe_gui:
     
@@ -20,6 +23,48 @@ class mothe_gui:
         txt = scrolledtext.ScrolledText(window1,width=500,height=250)
         txt.insert(INSERT,'MOTHe:\nMothe is a pipeline developed to detect and track multiple animals in a heterogeneous environment. \nMOTHe is a python based repository and it uses Convolutional Neural Network (CNN) architecture for the object detection task. \nIt takes a digital image as an input and reads its features to assign a category. \nThese algorithms are learning algorithms which means that they extract features from the images by using huge amounts \nof labeled training data. Once the CNN models are trained, these \nmodels can be used to classify novel data (images). \nMOTHe is designed to be generic which empowers the user to track objects of interest even in a natural setting.')
         txt.grid(column=0,row=0)
+
+    def click_determine_thresh():
+        max_value = 255
+        max_type = 1
+        max_binary_value = 255
+        trackbar_type = 'Type: \n 0: Binary'
+        trackbar_value = 'Value'
+        window_name = 'Check threshold'
+        def Threshold_Demo(val):
+            # threshold_type = cv2.getTrackbarPos(trackbar_type, window_name)
+            threshold_value = cv2.getTrackbarPos(trackbar_value, window_name)
+            _, dst = cv2.threshold(src_gray, threshold_value, max_binary_value, 0)
+            cv2.imshow(window_name, dst)
+        messagebox.showinfo('Status','Select a video file to check threshold values')
+        video = filedialog.askopenfilename()
+        cap = cv2.VideoCapture(video)
+        nframes =cap.get(cv2.CAP_PROP_FRAME_COUNT)          
+        i = 0
+        steps = 10
+        while cap.isOpened() and i<(nframes-steps):
+            i=i+steps
+            cap.set(cv2.CAP_PROP_POS_FRAMES, i)
+            ret, frame = cap.read()
+            if ret == False:
+                continue
+            src = frame.copy()
+            src = cv2.resize(src, (800, 600))
+            src_gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
+            cv2.namedWindow(window_name)
+            cv2.resizeWindow(window_name, 800, 600)
+            # cv2.createTrackbar(trackbar_type, window_name , 0, max_type, Threshold_Demo)
+            # Create Trackbar to choose Threshold value
+            cv2.createTrackbar(trackbar_value, window_name , 0, max_value, Threshold_Demo)
+            # Call the function to initialize
+            Threshold_Demo(0)
+            # Wait until user finishes program
+            key = cv2.waitKey() & 0xFF
+            if key == 27:
+                i = nframes-steps
+                cv2.destroyAllWindows()
+            elif key == ord('n'):
+                continue
 
     def main():
         window = Tk()
@@ -51,6 +96,7 @@ class mothe_gui:
                 txt1.grid(column=1, row=1) 
                 txt2 = Entry(window2,width=20)
                 txt2.grid(column=1, row=2) 
+                messagebox.showinfo('Status','Select the video file you would like to use to set box size')
                 file = filedialog.askopenfilename()
                 file = file.split("/")
                 file = file[-1]
@@ -61,6 +107,7 @@ class mothe_gui:
                     step_dg = int(txt2.get())
                     inst = mothe(path, thresh_min, thresh_max, step_dg)
                     inst.set_config(file)
+                    window2.destroy()
                     messagebox.showinfo('Update','Configuration file has been saved')
                 btn3 = Button(window2, text="GENERATE CONFIGURATION FILE", command = get_txt)
                 btn3.grid(column=1, row=3)
@@ -68,6 +115,7 @@ class mothe_gui:
                 window3 = Tk()
                 window3.title("Set variables")
                 window3.geometry("550x300")
+                messagebox.showinfo('satatus','Select video to generate your dataset')
                 path = filedialog.askopenfilename()
                 path = path.split("/")
                 path = path[-1]
@@ -76,8 +124,11 @@ class mothe_gui:
                 lbl.grid(column=0, row=0)
                 lbl = Label(window3, text="Step size between frames")
                 lbl.grid(column=0, row=1)
-                txt = Entry(window3,width=20)
-                txt.grid(column=1, row=0)
+                selected = StringVar(window3, "1")
+                rad1 = Radiobutton(window3,text='yes', variable=selected, value="1")
+                rad2 = Radiobutton(window3,text='no', variable=selected, value="2")
+                rad1.grid(column=1, row=0)
+                rad2.grid(column=2, row=0)
                 txt1 = Entry(window3,width=20)
                 txt1.grid(column=1, row=1)
                 with open("config.yml", "r") as stream:
@@ -88,7 +139,11 @@ class mothe_gui:
                 step = (int(config_data["step_for_dt"]))
                 def get_txt():
                     step_dg = int(txt1.get())
-                    class_name = txt.get()
+                    if selected.get()=="1":
+                        class_name = "yes"
+                    elif selected.get()=="2":
+                        class_name = "no"
+                    print(class_name)
                     inst = mothe(rt_path, thresh_min, thresh_max, step)
                     inst.generate_dataset(path, class_name, step_dg)
                     messagebox.showinfo('Update','Data generation completed')
@@ -105,10 +160,12 @@ class mothe_gui:
                 inst.train_model()
                 messagebox.showinfo('Update','Model generation completed')
             elif combo_val == "detection":
+                messagebox.showinfo('Status','Select video file to start detection')
                 path = filedialog.askopenfilename()
                 path = path.split("/")
                 path = path[-1]
                 messagebox.showinfo('Status','Using [{}] video for detection'.format(path))
+                messagebox.showinfo('Status','Select model file to start detection')
                 path1 = filedialog.askopenfilename()
                 path1 = path1.split("/")
                 path1 = path1[-1]
@@ -123,10 +180,12 @@ class mothe_gui:
                 inst.detection(path, path1)
                 messagebox.showinfo('Update','Object detection completed')
             elif combo_val == "track":
+                messagebox.showinfo('Status','Select video file to start detection')
                 path = filedialog.askopenfilename()
                 path = path.split("/")
                 path = path[-1]
                 messagebox.showinfo('Status','Using [{}] video for tracking'.format(path))
+                messagebox.showinfo('Status','Select model file to start detection')
                 path1 = filedialog.askopenfilename()
                 path1 = path1.split("/")
                 path1 = path1[-1]
@@ -144,7 +203,10 @@ class mothe_gui:
         btn2 = Button(window, text="Run", command = click_run)
         btn2.grid(column=3, row=3)   
         btn1 = Button(window, text="Help", command = mothe_gui.click_help)
-        btn1.grid(column=3, row=4)
+        btn1.grid(column=3, row=5)
+        btn3 = Button(window, text="Determine threshold", command = mothe_gui.click_determine_thresh)
+        btn3.grid(column=3, row=4)
+        
         window.mainloop()
 
 mothe_gui.main() 
