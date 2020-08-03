@@ -116,7 +116,7 @@ Mothe supports only binary classification. Therefore name the classes 'yes' for 
 
 
 <br>
-<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/12_fill_details.png.png">
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/12_fill_details.png">
 <br>
 
 A window appears which is a frame of the video you have chosen. Start generating data at this point.
