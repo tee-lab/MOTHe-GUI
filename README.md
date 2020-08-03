@@ -46,6 +46,14 @@ Linux: `$ cd MOTHE-GUI`
 
 5. Follow below steps to run different functions of the app
 
+**Step0**
+
+Consider trying to determine the threshold value to suit your data. Press the 'Determine threshold' button and play with the slider bar (0-255) to determine the approximate values between which the individual may be considered to be a keypoint by the blob detector. Check out the supplimentary material for more technical information about thresholding and blob detection.
+
+<br>
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/determine_threshold.gif">
+<br>
+
 **Step1** Configuration
 
 This step is used to set parameters of MOTHe. All the parameters are saved in config.yml. Parameters to be set in this step - home directory, cropping size of animals in the videos, path to video files etc.
@@ -89,8 +97,9 @@ A window appears during the configuration process which is a frame of the test v
 
 Click and drag across the animal to set the animal size for the configuration. Press the **c** key once to view the cropped animal. If satisfied with the click and drag process, proceed to press the **c** key **again** to confirm and end the configuration process.
 
-**screenshot required**
-**screenshot required**
+<br>
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/configure.gif">
+<br>
 
 You can view and change the *config.yml* file created in the mothe folder.
 
@@ -131,10 +140,6 @@ Click at the center of the animal once. The algorithm calculates the size of the
 
 -Once you are done collectiong samples from a video, press **esc** key to complete the process for this video. 
 
-**You shall repeat this process for multiple videos to sample training examples as widely as possible.**
-
-**screenshot showing selection process**
-
 <br>
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/13_post_generation_update.png">
 <br>
@@ -144,6 +149,9 @@ Click at the center of the animal once. The algorithm calculates the size of the
 
 Select all background examples in this case. At this point you will have two class folder with many examples to train the neural network.
 
+<br>
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/generate_data.gif">
+<br>
 
 **For testing:**
 If you wish to test (learn how to run) this module, download our video clips from [here](https://figshare.com/s/82661a4fd39008fae445). You can then generate samples by choosing any of these videos. If you directly want to proceed to next steps, download our training data from the same drive.
