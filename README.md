@@ -3,6 +3,7 @@
 Mothe is a pipeline developed to detect and track multiple animals in a heterogeneous environment. MOTHe is a python based repository and it uses Convolutional Neural Network (CNN) architecture for the object detection task. It takes a digital image as an input and reads its features to assign a category. These algorithms are learning algorithms which means that they extract features from the images by using huge amounts of labeled training data. Once the CNN models are trained, these models can be used to classify novel data (images). MOTHe is designed to be generic which empowers the user to track objects of interest even in a natural setting.
 
 **This repository provides a GUI application to run MOTHe on Linux/Windows/Mac OS.** User needs to install anaconda and then GUI can be run from anaconda environment.
+
 Follow the pre-requisites and installation steps before processding to MOTHe-GUI demonstration.
 
 
@@ -16,8 +17,10 @@ Finish these installations and pre-requisites before proceedinf further.
 
 # Running MOTHe app
 
-1. Download/clone this repository to your computer, if not done already. If you will be running MOTHe on our sample videos, download and copy untracked videos from [here](https://figshare.com/s/82661a4fd39008fae445) to the MOTHe folder which you just downloaded. For testing purpose, you can download any one video (wasp or blackbuck).
+1. Download/clone this repository to your computer, if not done already. For learning and trial purpose, you can run MOTHe on our sample videos.
 
+Download and copy untracked videos from [here](https://figshare.com/s/82661a4fd39008fae445) to the MOTHe folder which you just downloaded. 
+For testing purpose, you can download any one video (wasp or blackbuck). Please make sure to download these videos the same folder which you downloaded (MOTHe-GUI-master).
 
 2. Enter the anaconda environment
 
@@ -25,7 +28,9 @@ Windows: start Anaconda shell from the start menu
 
 **screenshot required**
 
-Linux: Open the terminal and type- `$ conda activate mothe`
+Linux: Open the terminal and type- 
+
+`$ conda activate mothe`
 
 **screenshot required**
 
@@ -33,9 +38,9 @@ Linux: Open the terminal and type- `$ conda activate mothe`
 
 Windows: `cd <path to MOTHe-GUI directory>`
 
-Linux: `$ cd MOTHE-GUI`
+Linux: `$ cd <path to MOTHe-GUI directory>`
 
-4. Run the MOTHe GUI app
+4. Run MOTHe GUI app
 
 `$ python mothe_gui.py`
 
@@ -44,7 +49,10 @@ Linux: `$ cd MOTHE-GUI`
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/1_gui_start.png">
 <br>
 
-5. Follow below steps to run different functions of the app
+It might take some time tokaunch the GUI as it uses tensorflow library.
+
+<details> 
+ <summary> 5. Follow below steps to run different functions of the app </summary>
 
 **Step1** Configuration
 
@@ -55,6 +63,12 @@ Select the configure option from drop down menu and press "run" button. It will 
 The next prompt is to enter the threshold values and step size for detection and tracking. The min and max threshold values depends on the specific case study (contrast between animal and background) and may take a few trial and error attempts to get it right (Read section Choosing color threshold for more details). **For the blackbuck videos, we have chosen 0 and 150 as the min and max threshold values and 150 and 250 for the wasp videos. **
 
 You will also specify a step size (no. of frames to skip for detection and tracking task). If for any reason, you want to run the detection for every n frames instead of all the frames (it can speed up the detection task significantly). To track the video without skipping any frames, enter the step size as 1.
+
+** For learning/trial purpose,** you may choose these default values:
+
+Wasp videos: min threshold = 150, max threshold = 250, step size = 50
+
+Blackbuck videos: min threshold = 0, max threshold = 150, step size = 50
 
 
 <br>
@@ -87,7 +101,7 @@ You will also specify a step size (no. of frames to skip for detection and track
 
 A window appears during the configuration process which is a frame of the test video you have chosen. This step is to determine the size of the animal to be detected and tracked. This value also helps in the dataset generation phase. Make sure to choose the most accomodating animal on the screen to avoid occlusions and missed detections later.
 
-Click and drag across the animal to set the animal size for the configuration. Press the **c** key once to view the cropped animal. If satisfied with the click and drag process, proceed to press the **c** key **again** to confirm and end the configuration process.
+Click and drag across the animal to set the animal size for the configuration. Press the **c** key once to view the cropped animal. If satisfied with the click and drag process, proceed to press the **c** key **again** to confirm and end the configuration process. You can draw multiple boxes at a time and the last box will be taken to set the crop size. If you think that wrong box size got stored, you can repeat the configuration step from start.
 
 <br>
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/configure.gif">
@@ -103,9 +117,10 @@ __Step 2: Data Generation__
 
 This program will pick frames from the videos, user can click on animals or background in these images to create samples for both categories (animal and background). Examples of animal of ineterst will be saved in the folder **yes** and background in the folder **no**.
 
-User needs to generate at least 8k-10k samples for each category (see section **How much training data do I need?** for detailed guidelines). One must ensure to take a wide representation of forms in which animals appears in the videos and same for the background variation.
+User needs to generate at least 8k-10k samples for each category (see section **How much training data do I need?** for detailed guidelines). One must ensure to take a wide representation of forms in which animals appears in the videos and same for the background variation. However, for the trial purpose you can generate 5-10 images in each category.
 
-Mothe supports only binary classification. Therefore name the classes 'yes' for positive examples and 'no' for background examples. The data generation method takes a **step size** argument as well which helps the user to keep the number of examples per video in check. (Ex: a higher step size limits the number of frames per video. if a video is very long, one can set a higher step size to skip through unwated and consecutive frames). Please note that this step size is different from the one you entered in configure step, this step size allows you to generated data from widely spaced frames of the videos.
+Mothe supports only binary classification. Therefore name the classes 'yes' for positive examples and 'no' for background examples. The data generation method takes a **step size** argument as well which helps the user to keep the number of examples per video in check. (Ex: a higher step size limits the number of frames per video. if a video is very long, one can set a higher step size to skip through unwated and consecutive frames). 
+**Please note that this step size is different from the one you entered in configure step, this step size allows you to generated data from widely spaced frames of the videos.**
 
 <br>
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/9_generate_dataset.png">
@@ -137,17 +152,18 @@ Click at the center of the animal once. The algorithm calculates the size of the
 <br>
 
 
-**Repeat this process for the 'no' class too.**
+**Make sure to repeat this process for the 'no'.**
 
-Select all background examples in this case. At this point you will have two class folder with many examples to train the neural network.
+Select all background examples in this case, i.e. background objects, habitat, any other category of objects present in the image. 
+
+At this point you will have two class folder with many examples to train the neural network.
 
 <br>
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/generate_data.gif">
 <br>
 
-**For testing:**
-If you wish to test (learn how to run) this module, download our video clips from [here](https://figshare.com/s/82661a4fd39008fae445). You can then generate samples by choosing any of these videos. If you directly want to proceed to next steps, download our training data from the same drive.
 
+You can close the data generation window now and proceed to the next step.
 
 **Step 3: Training the CNN**
 
@@ -156,6 +172,8 @@ If you wish to test (learn how to run) this module, download our video clips fro
 <br>
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/14_run_train.png">
 <br>
+
+You can see the status of this step on the terminal/shell.
 
 After successfully training the model, two graphs appear on the screen. The loss graph starts at a higher point and if the correct learning rate is applied, it takes a drastic decline and starts to plateau out as it reaches near zero. If a very high learning rate is applied, the graph starts travelling upwards instead of downwards. If a slightly higher learning rate is applied, it will not reack a closer point towards the zero line. The accuracy curve should travel upwards sharply and plateau out. It is important to avoid over fitting of data. This can be done by using adequate variance in the examples we generate during data generation. It is also important not to have too much variance since the accuracy may go down even though the network can generalize fairly well. For this stage, please use the link provided below to use the already generated data to train the network. 
 
@@ -174,8 +192,9 @@ After training, the model gets stored in the mothe directory as *mothe_model.h5p
 
 This step will detect the animals (object of interest) in the video frames. As mentioned earlier, this process is done in two steps - first the code predicts the areas in which animal may be potentially present (localisation) and then these areas are passes to the network for classification task. For localisation, we need thrsholding approach which gives us regions which have animals as well as background noise.
 
-Initiate the detection process by selecting 'detection' option and pressing the run button. It will prompt to enter the name of a test video and the model which you want to use. You can use the already trained model availab;le in MOTHe Github repository to run detection on blackbuck or wasp videos. 
+Initiate the detection process by selecting 'detection' option and pressing the run button. It will prompt to enter the name of a test video and the model which you want to use. You can use the already trained model available in MOTHe Github repository to run detection on blackbuck or wasp videos. 
 
+You can see the status in the terminal/shell.
 
 <br>
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/15_run_detection.png">
@@ -198,7 +217,7 @@ After the successful detection, a video with detections and *.csv* are generated
 
 **STep 5: Object tracking**
 
-This step is used to ascribe unique IDs to the detected animals and it gives us thetrajectoris of the animals. 
+This step is used to ascribe unique IDs to the detected animals and it gives us the trajectories of the animals. 
 It will use the detections from previous step. Hence, the input for this step would be original video clip and *.csv* generated in the previous step.
 
 Initiate the tracking process by selecting "track" option.
@@ -223,11 +242,13 @@ Initiate the tracking process by selecting "track" option.
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/26_tracking_complete_update.png">
 <br>
 
+You can see the status in the terminal/shell.
 
 After the successful tracking, a tracked video and *.csv* are generated in the mothe folder.
 
+</details>
 
-This completes all the steps associated with animal detection and tracking in the videos. Once you have tested it on sample videos, you can use MOTHe for your particular dataset. below are some guidelines which will help you select parameters for your videos.
+This completes all the steps associated with animal detection and tracking in the videos. Once you have tested it on sample videos, you can use MOTHe for your particular dataset. Below are some guidelines which will help you select parameters for your videos.
 
 
 
