@@ -1,5 +1,13 @@
 # MOTHe-GUI
 
+<br>
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/bb_track.gif">
+<br>
+
+<br>
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/wasp_track.gif">
+<br>
+
 Mothe is a pipeline developed to detect and track multiple animals in a heterogeneous environment. MOTHe is a python based repository and it uses Convolutional Neural Network (CNN) architecture for the object detection task. It takes a digital image as an input and reads its features to assign a category. These algorithms are learning algorithms which means that they extract features from the images by using huge amounts of labeled training data. Once the CNN models are trained, these models can be used to classify novel data (images). MOTHe is designed to be generic which empowers the user to track objects of interest even in a natural setting.
 
 **This repository provides a GUI application to run MOTHe on Linux/Windows/Mac OS.** User needs to install anaconda and then GUI can be run from anaconda environment.
