@@ -21,7 +21,7 @@ class mothe_gui:
         window1.title("Help")
         window1.geometry('550x300')
         txt = scrolledtext.ScrolledText(window1,width=500,height=250)
-        txt.insert(INSERT,'MOTHe:\nMothe is a pipeline developed to detect and track multiple animals in a heterogeneous environment. \nMOTHe is a python based repository and it uses Convolutional Neural Network (CNN) architecture for the object detection task. \nIt takes a digital image as an input and reads its features to assign a category. \nThese algorithms are learning algorithms which means that they extract features from the images by using huge amounts \nof labeled training data. Once the CNN models are trained, these \nmodels can be used to classify novel data (images). \nMOTHe is designed to be generic which empowers the user to track objects of interest even in a natural setting.')
+        txt.insert(INSERT,'MOTHe:\n0. Mothe tutorial: https://github.com/tee-lab/MOTHe-GUI/#mothe-gui\n1. Anaconda installation for linux: https://github.com/tee-lab/MOTHe-GUI/wiki#installations-and-prerequisites\n2. Anaconda installation for Windows/Mac: https://github.com/tee-lab/MOTHe-GUI/wiki#installing-anaconda-for-windowsmac\n3. Linux environment setup: https://github.com/tee-lab/MOTHe-GUI/wiki#setting-up-the-environment-linux\n4. Windows/Mac environment setup: https://github.com/tee-lab/MOTHe-GUI/wiki#setting-up-the-environment-windowsmac\n5. FAQs and troubleshooting: https://github.com/tee-lab/MOTHe-GUI/wiki#faqstroubleshooting')
         txt.grid(column=0,row=0)
 
     def click_determine_thresh():
@@ -108,19 +108,19 @@ class mothe_gui:
                     inst = mothe(path, thresh_min, thresh_max, step_dg)
                     inst.set_config(file)
                     window2.destroy()
-                    messagebox.showinfo('Update','Configuration file has been saved')
+                    messagebox.showinfo('Update','Configuration file has been saved. Proceed to data generation!')
                 btn3 = Button(window2, text="GENERATE CONFIGURATION FILE", command = get_txt)
                 btn3.grid(column=1, row=3)
             elif combo_val == "generate data":
                 window3 = Tk()
                 window3.title("Set variables")
                 window3.geometry("550x300")
-                messagebox.showinfo('satatus','Select video to generate your dataset')
+                messagebox.showinfo('status','Select video to generate your dataset')
                 path = filedialog.askopenfilename()
                 path = path.split("/")
                 path = path[-1]
                 messagebox.showinfo('Status','Using [{}] for data generation'.format(path))
-                lbl = Label(window3, text="Name of the class (Ex: yes or no)")
+                lbl = Label(window3, text="Name of the class")
                 lbl.grid(column=0, row=0)
                 lbl = Label(window3, text="Step size between frames")
                 lbl.grid(column=0, row=1)
@@ -143,10 +143,9 @@ class mothe_gui:
                         class_name = "yes"
                     elif selected.get()=="2":
                         class_name = "no"
-                    print(class_name)
                     inst = mothe(rt_path, thresh_min, thresh_max, step)
                     inst.generate_dataset(path, class_name, step_dg)
-                    messagebox.showinfo('Update','Data generation completed')
+                    messagebox.showinfo('Update','Data generation completed for {} video and {} class'.format(path, class_name))
                 btn4 = Button(window3, text="GENERATE DATA", command = get_txt)
                 btn4.grid(column=1, row=2)  
             elif combo_val == "train":
@@ -158,7 +157,7 @@ class mothe_gui:
                 step = (int(config_data["step_for_dt"]))
                 inst = mothe(rt_path, thresh_min, thresh_max, step)
                 inst.train_model()
-                messagebox.showinfo('Update','Model generation completed')
+                messagebox.showinfo('Update','Model generation completed. Proceed to perform detection and tracking!')
             elif combo_val == "detection":
                 messagebox.showinfo('Status','Select video file to start detection')
                 path = filedialog.askopenfilename()
@@ -178,7 +177,7 @@ class mothe_gui:
                 step = (int(config_data["step_for_dt"]))
                 inst = mothe(rt_path, thresh_min, thresh_max, step)
                 inst.detection(path, path1)
-                messagebox.showinfo('Update','Object detection completed')
+                messagebox.showinfo('Update','Object detection completed. Proceed to perform tracking!')
             elif combo_val == "track":
                 messagebox.showinfo('Status','Select video file to start detection')
                 path = filedialog.askopenfilename()
