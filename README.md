@@ -10,7 +10,7 @@ Follow the pre-requisites and installation steps before processding to MOTHe-GUI
 
 Visit this wiki page to learn about installing Anaconda for your respective OS. Follow the link below.
 
-*__https://github.com/tee-lab/MOTHe-GUI/wiki__*
+*__https://github.com/tee-lab/MOTHe-GUI/wiki/Welcome-to-the-MOTHe-GUI-wiki!__*
 
 Finish these installations and pre-requisites before proceedinf further.
 
