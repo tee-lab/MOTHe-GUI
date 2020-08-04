@@ -46,14 +46,6 @@ Linux: `$ cd MOTHE-GUI`
 
 5. Follow below steps to run different functions of the app
 
-**Step0**
-
-Consider trying to determine the threshold value to suit your data. Press the 'Determine threshold' button and play with the slider bar (0-255) to determine the approximate values between which the individual may be considered to be a keypoint by the blob detector. Check out the supplimentary material for more technical information about thresholding and blob detection.
-
-<br>
-<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/determine_threshold.gif">
-<br>
-
 **Step1** Configuration
 
 This step is used to set parameters of MOTHe. All the parameters are saved in config.yml. Parameters to be set in this step - home directory, cropping size of animals in the videos, path to video files etc.
@@ -255,6 +247,12 @@ Run the detection with these thresholds and you can improve the detection by hit
 
 2. You can compare your videos to wasp and blackbuck videos and start with threshold values to which your data is more similar. For example, if your animal looks more similar to blackbuck in color and lighting conditions, you may start with default thresholds and improve the detection by changing lower and upper threshold by little amount at a time.
 
+We have also added a functionality with which you can play around with threshold values to see how different threshold values cinverts the image.
+Consider trying to determine the threshold value to suit your data. At the start of application, press the 'Determine threshold' button and play with the slider bar (0-255) to determine the approximate values between which the individual may be considered to be a keypoint by the blob detector. 
+
+<br>
+<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/determine_threshold.gif">
+<br>
 
 
 
