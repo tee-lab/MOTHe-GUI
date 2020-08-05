@@ -51,7 +51,7 @@ You need to install anaconda and ensure all dependneices are installed. Please v
 It might take some time (few seconds to a minute) to launch the GUI as it uses the tensorflow library.
 
 <details> 
- <summary> Follow below steps to run different functions of the app </summary>
+ <summary> Follow the detailed steps given below to run different functions of the app </summary>
 
 **Step 1:** Configuration
 
