@@ -21,7 +21,7 @@ Visit this wiki page to learn about installing Anaconda for your respective OS. 
 
 *__https://github.com/tee-lab/MOTHe-GUI/wiki/MOTHe-GUI-wiki__*
 
-Finish these installations and pre-requisites before proceedinf further.
+Finish these installations and pre-requisites before proceedinf further. **Please make sure to read above section even if you have anaconda already installed in your system, as there are many other dependencies and setting-up anaconda environment is required.**
 
 # Running MOTHe app
 
