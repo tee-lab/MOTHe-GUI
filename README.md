@@ -8,50 +8,45 @@
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/wasp_track.gif">
 <br>
 
-Mothe is a pipeline developed to detect and track multiple animals in a heterogeneous environment. MOTHe is a python based repository and it uses Convolutional Neural Network (CNN) architecture for the object detection task. It takes a digital image as an input and reads its features to assign a category. These algorithms are learning algorithms which means that they extract features from the images by using huge amounts of labeled training data. Once the CNN models are trained, these models can be used to classify novel data (images). MOTHe is designed to be generic which empowers the user to track objects of interest even in a natural setting.
+Mothe is a GUI-based application to detect and track multiple animals in heterogeneous environments. MOTHe is a python based repository and it uses Convolutional Neural Network (CNN) architecture for the object detection task. It takes a digital image as an input and reads its features to assign a category. Learning algorithms extract features from the images by using huge amounts of labeled training data. Once we train the neural network to generate models of the objects of interest, they can be used to classify novel data (images). MOTHe is designed to be generic which empowers the user to track objects of interest even in natural settings.
 
 **This repository provides a GUI application to run MOTHe on Linux/Windows/Mac OS.** User needs to install anaconda and then GUI can be run from anaconda environment.
 
-Follow the pre-requisites and installation steps before processding to MOTHe-GUI demonstration.
+Please check all the pre-requisites and installation steps before processding to MOTHe-GUI demonstration. While we provide detaild instructions, basic familiarity with command prompts in terminal (in any OS) will be helpful.  
 
-
-## INSTALLATIONS AND PREREQUISITES
+## PREREQUISITES AND INSTALLATIONS
 
 Visit this wiki page to learn about installing Anaconda for your respective OS. Follow the link below.
 
 *__https://github.com/tee-lab/MOTHe-GUI/wiki/MOTHe-GUI-wiki__*
 
-Finish these installations and pre-requisites before proceedinf further. **Please make sure to read above section even if you have anaconda already installed in your system, as there are many other dependencies and setting-up anaconda environment is required.**
+**Please make sure to read above section even if you have anaconda already installed in your system, as there are many other dependencies that may require installations.**
 
 # Running MOTHe app
 
-1. Download/clone this repository to your computer, if not done already. For learning and trial purpose, you can run MOTHe on our sample videos.
+1. Download/clone this repository to your computer. 
 
-Download and copy untracked videos from [here](https://figshare.com/s/82661a4fd39008fae445) to the MOTHe folder which you just downloaded. 
-For testing purpose, you can download any one video (wasp or blackbuck). Please make sure to download these videos the same folder which you downloaded (MOTHe-GUI-master).
+2. For the purpose of trial/learning of our package, you can run MOTHe on our sample videos. Download and copy untracked videos from [here](https://figshare.com/s/82661a4fd39008fae445) to the same folder in which you have kept the MOTHe package (MOTHe-GUI-master). To begin with, you can download only one of the videos provided (wasp or blackbuck). 
 
-2. Enter the anaconda environment
+3. Enter the anaconda environment:
 
-Windows: start Anaconda shell from the start menu
+**Windows**: start Anaconda shell from the start menu
 
-**screenshot required**
+<!---**screenshot required**--->
 
-Linux: Open the terminal and type- 
+**Linux**: Open the terminal and type- 
 
 `$ conda activate mothe`
 
-**screenshot required**
+<!---**screenshot required**--->
 
-3. Change directory to MOTHe folder
+4. Change the directory to MOTHe folder.
 
-Windows: `cd <path to MOTHe-GUI directory>`
+Windows/Linux/Mac: `cd <path to MOTHe-GUI directory>`
 
-Linux: `$ cd <path to MOTHe-GUI directory>`
-
-4. Run MOTHe GUI app
+5. Run MOTHe GUI app
 
 `$ python mothe_gui.py`
-
 
 <br>
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/1_gui_start.png">
