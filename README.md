@@ -14,13 +14,13 @@ Mothe is a GUI-based application to detect and track multiple animals in heterog
 
 Please check all the pre-requisites and installation steps before processding to MOTHe-GUI demonstration. While we provide detaild instructions, basic familiarity with command prompts in terminal (in any OS) will be helpful.  
 
-## PREREQUISITES AND INSTALLATIONS
+## Prerequisites
 
-Visit this wiki page to learn about installing Anaconda for your respective OS. Follow the link below.
+You need to install anaconda and ensure all dependneices are installed. Please visit this wiki page to learn about installing anaconda for your respective OS. Follow the link below.
 
 *__https://github.com/tee-lab/MOTHe-GUI/wiki/MOTHe-GUI-wiki__*
 
-**Please make sure to read above section even if you have anaconda already installed in your system, as there are many other dependencies that may require installations.**
+**Please make sure to read above section even if you have anaconda already installed in your system, as there are many dependencies that may require installations.**
 
 # Running MOTHe app
 
@@ -34,7 +34,7 @@ Visit this wiki page to learn about installing Anaconda for your respective OS. 
 
 <!---**screenshot required**--->
 
-**Linux**: Open the terminal and type- 
+**Linux/Mac OS**: Open the terminal and type- 
 
 `$ conda activate mothe`
 
@@ -42,7 +42,7 @@ Visit this wiki page to learn about installing Anaconda for your respective OS. 
 
 4. Change the directory to MOTHe folder.
 
-Windows/Linux/Mac: `cd <path to MOTHe-GUI directory>`
+Windows/Linux/Mac: `$ cd <path to MOTHe-GUI directory>`
 
 5. Run MOTHe GUI app
 
@@ -52,22 +52,22 @@ Windows/Linux/Mac: `cd <path to MOTHe-GUI directory>`
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/1_gui_start.png">
 <br>
 
-It might take some time tokaunch the GUI as it uses tensorflow library.
+It might take some time (few seconds to a minute) to launch the GUI as it uses the tensorflow library.
 
 <details> 
  <summary> 5. Follow below steps to run different functions of the app </summary>
 
-**Step1** Configuration
+**Step 1:** Configuration
 
-This step is used to set parameters of MOTHe. All the parameters are saved in config.yml. Parameters to be set in this step - home directory, cropping size of animals in the videos, path to video files etc.
+This step is used to set parameters of MOTHe. Parameters to be set in this step are: (i) home directory, (ii) cropping size of animals in the videos, (iii) path to video files, etc. All the parameters are saved in config.yml.
 
-Select the configure option from drop down menu and press "run" button. It will prompt you to enter the path of the MOTHe directory, select the directory and confirm. Next it will ask you to select an example video. You can select any video from your video database.
+Select the configure option from drop down menu and press "run" button. It will prompt you to enter the path of the MOTHe directory, select the directory and confirm. Next, it will ask you to select an example video. You can select any video from your video database, or one of the sample videos you have downloaded from [here](https://figshare.com/s/82661a4fd39008fae445). 
 
-The next prompt is to enter the threshold values and step size for detection and tracking. The min and max threshold values depends on the specific case study (contrast between animal and background) and may take a few trial and error attempts to get it right (Read section Choosing color threshold for more details). **For the blackbuck videos, we have chosen 0 and 150 as the min and max threshold values and 150 and 250 for the wasp videos. **
+The next prompt is to enter the threshold values and step size for detection and tracking. The min and max threshold values depends on the specific case study (contrast between animal and background) and may take a few trial and error attempts to get it right (Read the section Choosing color threshold for more details). 
 
 You will also specify a step size (no. of frames to skip for detection and tracking task). If for any reason, you want to run the detection for every n frames instead of all the frames (it can speed up the detection task significantly). To track the video without skipping any frames, enter the step size as 1.
 
-** For learning/trial purpose,** you may choose these default values:
+** For learning/trial purposes,** you may choose these values:
 
 Wasp videos: min threshold = 150, max threshold = 250, step size = 50
 
