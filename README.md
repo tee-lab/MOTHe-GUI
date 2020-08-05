@@ -30,32 +30,28 @@ You need to install anaconda and ensure all dependneices are installed. Please v
 
 3. Enter the anaconda environment:
 
-**Windows**: start Anaconda shell from the start menu
-
-<!---**screenshot required**--->
-
-**Linux/Mac OS**: Open the terminal and type- 
+**Windows**: Start the Anaconda shell from the start menu. For **Linux/Mac OS**, open the terminal. Then type: 
 
 `$ conda activate mothe`
 
-<!---**screenshot required**--->
+**screenshots for win/linux required**
 
-4. Change the directory to MOTHe folder.
+4. Change the directory to MOTHe folder:
 
-Windows/Linux/Mac: `$ cd <path to MOTHe-GUI directory>`
+`$ cd <path to MOTHe-GUI directory>`
 
-5. Run MOTHe GUI app
+5. Run MOTHe GUI app:
 
 `$ python mothe_gui.py`
 
 <br>
-<img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/1_gui_start.png">
+<img height="300" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/1_gui_start.png">
 <br>
 
 It might take some time (few seconds to a minute) to launch the GUI as it uses the tensorflow library.
 
 <details> 
- <summary> 5. Follow below steps to run different functions of the app </summary>
+ <summary> Follow below steps to run different functions of the app </summary>
 
 **Step 1:** Configuration
 
