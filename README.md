@@ -12,7 +12,7 @@ Mothe is a GUI-based application to detect and track multiple animals in heterog
 
 **This repository provides a GUI application to run MOTHe on Linux/Windows/Mac OS.** User needs to install anaconda and then GUI can be run from anaconda environment.
 
-Please check all the pre-requisites and installation steps before processding to MOTHe-GUI demonstration. While we provide detaild instructions, basic familiarity with command prompts in terminal (in any OS) will be helpful.  
+Please check all the pre-requisites and installation steps before processding to MOTHe-GUI demonstration. While we provide detailed instructions, basic familiarity with command prompts in terminal (in any OS) will be helpful.  
 
 ## Prerequisites
 
@@ -30,7 +30,9 @@ You need to install anaconda and ensure all dependneices are installed. Please v
 
 3. Enter the anaconda environment:
 
-**Windows**: Start the Anaconda shell from the start menu. For **Linux/Mac OS**, open the terminal. Then type: 
+**Windows OS**: Start the Anaconda shell from the start menu.
+
+**Linux/Mac OS**: o\Open the terminal, then type: 
 
 `$ conda activate mothe`
 
@@ -51,19 +53,19 @@ You need to install anaconda and ensure all dependneices are installed. Please v
 It might take some time (few seconds to a minute) to launch the GUI as it uses the tensorflow library.
 
 <details> 
- <summary> Follow the detailed steps given below to run different functions of the app </summary>
+<summary> Follow the detailed steps given below to run different functions of the app </summary>
 
 **Step 1:** Configuration
 
-This step is used to set parameters of MOTHe. Parameters to be set in this step are: (i) home directory, (ii) cropping size of animals in the videos, (iii) path to video files, etc. All the parameters are saved in config.yml.
+This step is used to set parameters of MOTHe. Parameters to be set in this step are: (i) home directory, (ii) cropping size of animals in the videos, (iii) path to video files, etc. All the parameters are saved in *config.yml*.
 
-Select the configure option from drop down menu and press "run" button. It will prompt you to enter the path of the MOTHe directory, select the directory and confirm. Next, it will ask you to select an example video. You can select any video from your video database, or one of the sample videos you have downloaded from [here](https://figshare.com/s/82661a4fd39008fae445). 
+Select the "configure" option from drop down menu and press "run" button. It will prompt you to enter the path of the MOTHe directory, select the directory and confirm. Next, it will ask you to select an example video. You can select any video from your video database, or one of the sample videos you have downloaded from [here](https://figshare.com/s/82661a4fd39008fae445). 
 
-The next prompt is to enter the threshold values and step size for detection and tracking. The min and max threshold values depends on the specific case study (contrast between animal and background) and may take a few trial and error attempts to get it right (Read the section Choosing color threshold for more details). 
+The next prompt is to enter the threshold values and step size for detection and tracking. The min and max threshold values depends on the specific case study (contrast between animal and background) and may take a few trial and error attempts to get it right (Read the section **Choosing color threshold** for more details). 
 
 You will also specify a step size (no. of frames to skip for detection and tracking task). If for any reason, you want to run the detection for every n frames instead of all the frames (it can speed up the detection task significantly). To track the video without skipping any frames, enter the step size as 1.
 
-** For learning/trial purposes,** you may choose these values:
+**For learning/trial purposes,** you may choose these values:
 
 Wasp videos: min threshold = 150, max threshold = 250, step size = 50
 
@@ -106,7 +108,7 @@ Click and drag across the animal to set the animal size for the configuration. P
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/configure.gif">
 <br>
 
-You can view and change the *config.yml* file created in the mothe folder.
+You can view the *config.yml* file created in mothe folder.
 
 You can now select the next option from drop-down menu of MOTHe-GUI to run data generation step.
 
@@ -114,11 +116,11 @@ You can now select the next option from drop-down menu of MOTHe-GUI to run data 
 __Step 2: Data Generation__
 
 
-This program will pick frames from the videos, user can click on animals or background in these images to create samples for both categories (animal and background). Examples of animal of ineterst will be saved in the folder **yes** and background in the folder **no**.
+This program will pick frames from the videos, user can click on animals or background in these images to create samples for both categories (animal and background). Examples of animal of interest will be saved in the folder **yes** and background in the folder **no**.
 
 User needs to generate at least 8k-10k samples for each category (see section **How much training data do I need?** for detailed guidelines). One must ensure to take a wide representation of forms in which animals appears in the videos and same for the background variation. However, for the trial purpose you can generate 5-10 images in each category.
 
-Mothe supports only binary classification. Therefore name the classes 'yes' for positive examples and 'no' for background examples. The data generation method takes a **step size** argument as well which helps the user to keep the number of examples per video in check. (Ex: a higher step size limits the number of frames per video. if a video is very long, one can set a higher step size to skip through unwated and consecutive frames). 
+MOTHe supports only binary classification. Therefore name the classes 'yes' for positive examples and 'no' for background examples. The data generation method takes a **step size** argument as well which helps the user to keep the number of examples per video in check. (Ex: a higher step size limits the number of frames per video. if a video is very long, one can set a higher step size to skip through unwated and consecutive frames). 
 **Please note that this step size is different from the one you entered in configure step, this step size allows you to generated data from widely spaced frames of the videos.**
 
 <br>
@@ -174,7 +176,7 @@ You can close the data generation window now and proceed to the next step.
 
 You can see the status of this step on the terminal/shell.
 
-After successfully training the model, two graphs appear on the screen. The loss graph starts at a higher point and if the correct learning rate is applied, it takes a drastic decline and starts to plateau out as it reaches near zero. If a very high learning rate is applied, the graph starts travelling upwards instead of downwards. If a slightly higher learning rate is applied, it will not reack a closer point towards the zero line. The accuracy curve should travel upwards sharply and plateau out. It is important to avoid over fitting of data. This can be done by using adequate variance in the examples we generate during data generation. It is also important not to have too much variance since the accuracy may go down even though the network can generalize fairly well. For this stage, please use the link provided below to use the already generated data to train the network. 
+After successfully training the model, two graphs appear on the screen. The loss graph starts at a higher point and if the correct learning rate is applied, it takes a drastic decline and starts to plateau out as it reaches near zero. If a very high learning rate is applied, the graph starts travelling upwards instead of downwards. If a slightly higher learning rate is applied, it will not reack a closer point towards the zero line. The accuracy curve should travel upwards sharply and plateau out. It is important to avoid over fitting of data. This can be done by using adequate variance in the examples we generate during data generation. It is also important not to have too much variance since the accuracy may go down even though the network can generalize fairly well. 
 
 <br>
 <img height="350" src="https://github.com/tee-lab/mothe/blob/master/mothe_screenshots/20_post_training_graphs.png">
@@ -267,7 +269,7 @@ Run the detection with these thresholds and you can improve the detection by hit
 
 2. You can compare your videos to wasp and blackbuck videos and start with threshold values to which your data is more similar. For example, if your animal looks more similar to blackbuck in color and lighting conditions, you may start with default thresholds and improve the detection by changing lower and upper threshold by little amount at a time.
 
-We have also added a functionality with which you can play around with threshold values to see how different threshold values cinverts the image.
+3. We have also added a functionality with which you can play around with threshold values to see how different threshold values converts the image.
 Consider trying to determine the threshold value to suit your data. At the start of application, press the 'Determine threshold' button and play with the slider bar (0-255) to determine the approximate values between which the individual may be considered to be a keypoint by the blob detector. 
 
 <br>
