@@ -47,7 +47,7 @@ You need to install anaconda and ensure all dependneices are installed. Please v
 `$ python mothe_gui.py`
 
 <br>
-<img height="300" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/1_gui_start.png">
+<img height="300" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/app_home.png">
 <br>
 
 It might take some time (few seconds to a minute) to launch the GUI as it uses the tensorflow library.
