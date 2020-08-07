@@ -221,7 +221,7 @@ After the successful detection, a video with detections and *.csv* are generated
 This step is used to ascribe unique IDs to the detected animals and it gives us the trajectories of the animals. 
 It will use the detections from previous step. Hence, the input for this step would be original video clip and *.csv* generated in the previous step.
 
-Initiate the tracking process by selecting "track" option.
+Initiate the tracking process by selecting "track" option.  It will prompt to enter the name of a test video and the model which you want to use (**preferably the same model you selected for the detection step**).
 
 <br>
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/21_run_tracking.png">
