@@ -8,9 +8,9 @@
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/wasp_track.gif">
 <br>
 
-Mothe is a GUI-based application to detect and track multiple animals in heterogeneous environments. MOTHe is a python based repository and it uses Convolutional Neural Network (CNN) architecture for the object detection task. It takes a digital image as an input and reads its features to assign a category. Learning algorithms extract features from the images by using huge amounts of labeled training data. Once we train the neural network to generate models of the objects of interest, they can be used to classify novel data (images). MOTHe is designed to be generic which empowers the user to track objects of interest even in natural settings.
+**Mothe is a python-based application with GUI to detect and track multiple animals in heterogeneous environments. It has been tested on Linux/Windows/Mac OS.**
 
-**This repository provides a GUI application to run MOTHe on Linux/Windows/Mac OS.** User needs to install anaconda and then GUI can be run from anaconda environment.
+MOTHe uses Convolutional Neural Network (CNN) architecture for the object detection task. It takes a digital image as an input and reads its features to assign a category. Learning algorithms extract features from the images by using huge amounts of labeled training data. Once we train the neural network to generate models of the objects of interest, they can be used to classify novel data (images). MOTHe is designed to be generic which empowers the user to track objects of interest even in natural settings.
 
 Please check all the pre-requisites and installation steps before processding to MOTHe-GUI demonstration. While we provide detailed instructions, basic familiarity with command prompts in terminal (in any OS) will be helpful.  
 
