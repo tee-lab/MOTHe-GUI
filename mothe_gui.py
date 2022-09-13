@@ -165,8 +165,7 @@ class mothe_gui:
                 path = path[-1]
                 messagebox.showinfo('Status','Using [{}] video for detection'.format(path))
                 messagebox.showinfo('Status','Select model file to start detection')
-                #path1 = filedialog.askopenfilename()
-                path1 = filedialog.askdirectory()
+                path1 = filedialog.askopenfilename()
                 path1 = path1.split("/")
                 path1 = path1[-1]
                 messagebox.showinfo('Status','Using [{}] model for detection'.format(path1))
@@ -186,8 +185,7 @@ class mothe_gui:
                 path = path[-1]
                 messagebox.showinfo('Status','Using [{}] video for tracking'.format(path))
                 messagebox.showinfo('Status','Select model file to start detection')
-                #path1 = filedialog.askopenfilename()
-                path1 = filedialog.askdirectory()
+                path1 = filedialog.askopenfilename()
                 path1 = path1.split("/")
                 path1 = path1[-1]
                 messagebox.showinfo('Status','Using [{}] model for tracking'.format(path1))
