@@ -10,6 +10,8 @@
 
 **Mothe is a python-based application with GUI to detect and track multiple animals in heterogeneous environments. It has been tested on Linux/Windows/Mac OS.**
 
+**Reference: Rathore, Akanksha, Ananth Sharma, Nitika Sharma, Colin J. Torney, and Vishwesha Guttal. 2023, “Multi-Object Tracking in Heterogeneous environments (MOTHe) for animal video recordings.” Accepted in PeerJ Life, bioRxiv: https://www.biorxiv.org/content/10.1101/2020.01.10.899989v2.full ***
+
 MOTHe uses Convolutional Neural Network (CNN) architecture for the object detection task. It takes a digital image as an input and reads its features to assign a category. Learning algorithms extract features from the images by using huge amounts of labeled training data. Once we train the neural network to generate models of the objects of interest, they can be used to classify novel data (images). MOTHe is designed to be generic which empowers the user to track objects of interest even in natural settings.
 
 Please check all the pre-requisites and installation steps before processding to MOTHe-GUI demonstration. While we provide detailed instructions, basic familiarity with command prompts in terminal (in any OS) will be helpful.  
