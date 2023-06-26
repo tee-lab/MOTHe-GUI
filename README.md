@@ -10,7 +10,7 @@
 
 **Mothe is a python-based application with GUI to detect and track multiple animals in heterogeneous environments. It has been tested on Linux/Windows/Mac OS.**
 
-**Reference: Rathore, Akanksha, Ananth Sharma, Nitika Sharma, Colin J. Torney, and Vishwesha Guttal. 2023, “Multi-Object Tracking in Heterogeneous environments (MOTHe) for animal video recordings” PeerJ 11:e15573, doi: [https://peerj.com/articles/15573/](https://doi.org/10.7717/peerj.15573) (also at bioRxiv**: https://www.biorxiv.org/content/10.1101/2020.01.10.899989v2.full)
+**Reference: Rathore A, Sharma A, Shah S, Sharma N, Torney C, Guttal V. 2023. Multi-Object Tracking in Heterogeneous environments (MOTHe) for animal video recordings. PeerJ 11:e15573, doi: [https://peerj.com/articles/15573/](https://doi.org/10.7717/peerj.15573) (also at bioRxiv**: https://www.biorxiv.org/content/10.1101/2020.01.10.899989v2.full)
 
 MOTHe uses Convolutional Neural Network (CNN) architecture for the object detection task. It takes a digital image as an input and reads its features to assign a category. Learning algorithms extract features from the images by using huge amounts of labeled training data. Once we train the neural network to generate models of the objects of interest, they can be used to classify novel data (images). MOTHe is designed to be generic which empowers the user to track objects of interest even in natural settings.
 
@@ -278,7 +278,7 @@ Consider trying to determine the threshold value to suit your data. At the start
 
 If you find this package interesting, relevant or use for your work (with or without modifications), please cite the following manuscript: 
 
-**Rathore, Akanksha, Ananth Sharma, Nitika Sharma, Colin J. Torney, and Vishwesha Guttal. 2023, “Multi-Object Tracking in Heterogeneous environments (MOTHe) for animal video recordings.” PeerJ 11:e15573 https://doi.org/10.7717/peerj.15573 (also at bioRxiv**: https://www.biorxiv.org/content/10.1101/2020.01.10.899989v2.full)
+**Rathore A, Sharma A, Shah S, Sharma N, Torney C, Guttal V. 2023. Multi-Object Tracking in Heterogeneous environments (MOTHe) for animal video recordings.” PeerJ 11:e15573 https://doi.org/10.7717/peerj.15573 (also at bioRxiv**: https://www.biorxiv.org/content/10.1101/2020.01.10.899989v2.full)
 
 <br>
 <img height="350" src="https://github.com/tee-lab/MOTHe-GUI/blob/master/gui_screenshots/determine_threshold.gif">
